@@ -8,6 +8,13 @@ app.get('/', (request, resposne) => {
 });
 
 io.on('connection', (socket) => {
+  io.emit('new user', 'new user connected')
+
+  socket.on('disconnect', () => {
+    console.log('user left')
+    io.emit('user left', 'a user left')
+  })
+
   socket.on('chat message', (msg) => {
     io.emit(`chat message`, msg)
     console.log(`message: ${msg}`)

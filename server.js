@@ -1,20 +1,28 @@
 const express = require('express');
 const app = express();
 const http = require('http').Server(app);
-const io = require('socket.io')(http)
+const io = require('socket.io')(http);
 
-app.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname + '/public'));
 
 io.on('connection', (socket) => {
-  io.emit('new user', 'new user connected')
+  io.emit('new user', 'new user connected');
 
   socket.on('disconnect', () => {
-    io.emit('user left', 'a user left')
+    io.emit('user left', 'a user left');
   })
 
   socket.on('chat message', (msg) => {
-    socket.broadcast.emit(`chat message`, msg)
+    socket.broadcast.emit(`chat message`, msg);
   });
+
+  socket.on('typing', (msg) => {
+    socket.broadcast.emit('typing', msg);
+  })
+
+  socket.on('not typing', (msg) => {
+    socket.broadcast.emit('not typing', msg);
+  })
 });
 
 http.listen(3000, () => {

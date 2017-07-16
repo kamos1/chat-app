@@ -14,17 +14,19 @@ form {
   position: fixed; 
   bottom: 0; 
   width: 100%; 
+  text-align: center;
 }
 
 form input { 
   border: 0; 
   padding: 10px; 
   width: 90%; 
-  margin-right: .5%; 
+  display: block;
+  margin: 0 auto;
 }
 
 form button { 
-  width: 9%; 
+  min-width: 90%; 
   background: rgb(130, 224, 255); 
   border: none; 
   padding: 10px;
@@ -32,9 +34,14 @@ form button {
 
 label {
   color: #FFF;
+  margin-bottom: 20px;
 }
 
 .username {
+  margin-bottom: 20px;
+}
+
+.message {
   margin-bottom: 20px;
 }
 

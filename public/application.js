@@ -9,6 +9,16 @@ $(() => {
     return false;
   });
 
+  $('.message').keydown(() => {
+    const username = $('.username').val();
+    socket.emit('typing', `${username} is typing`)
+  })
+
+  $('.message').keyup(() => {
+    const username = $('.username').val();
+    socket.emit('not typing', '');
+  })
+
   socket.on('chat message', (msg) => {
     $('#messages').append($('<li>').text(msg));
   });
@@ -19,5 +29,13 @@ $(() => {
 
   socket.on('user left', (msg) => {
     $('#messages').append($('<li>').text(msg));
+  })
+
+  socket.on('typing', (msg) => {
+    $('#typing').text(msg);
+  })
+
+  socket.on('not typing', (msg) => {
+    $('#typing').text(msg);
   })
 });

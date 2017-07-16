@@ -30,6 +30,14 @@ form button {
   padding: 10px;
 }
 
+label {
+  color: #FFF;
+}
+
+.username {
+  margin-bottom: 20px;
+}
+
 #messages { 
   list-style-type: none; 
   margin: 0; 

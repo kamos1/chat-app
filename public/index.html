@@ -5,15 +5,16 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
   <body>
-    <ul id="messages"></ul>
-    <p id='typing'></p>
     <form class="">
       <label for="username">Enter your username</label>
-      <input class="username" name="username" autocomplete="off" placeholder="Enter your username">
+      <input class="username-input" name="username" autocomplete="off" placeholder="Enter your username">
       <label for="messsage">Your message</label>
-      <input id="m" class="message" name="message" autocomplete="off" placeholder="Enter your message" />
+      <input id="m" class="message-input" name="message" autocomplete="off" placeholder="Enter your message" />
       <button id="submit-btn">Send</button>
     </form>
+    <p class="user-connection"></p>
+    <ul id="messages"></ul>
+    <ul id='typing'></ul>
 
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="/socket.io/socket.io.js"></script>

@@ -9,40 +9,52 @@ body {
 }
 
 form { 
-  background: #000; 
-  padding: 3px; 
-  position: fixed; 
-  bottom: 0; 
-  width: 100%; 
+  background: #F7F9F9;
+  padding: 3px;
+  width: 100%;
   text-align: center;
+  margin: 0px auto;
 }
 
 form input { 
   border: 0; 
   padding: 10px; 
-  width: 90%; 
+  width: 60%; 
   display: block;
-  margin: 0 auto;
+  margin: 10px auto;
+
 }
 
 form button { 
-  min-width: 90%; 
-  background: rgb(130, 224, 255); 
+  width: 60%; 
+  background: #63D2FF; 
   border: none; 
   padding: 10px;
-}
-
-label {
+  font-size: 1.5em;
   color: #FFF;
   margin-bottom: 20px;
 }
 
-.username {
+label {
+  font-size: 1.5em;
+}
+
+.username-input {
   margin-bottom: 20px;
 }
 
-.message {
+.message-input {
   margin-bottom: 20px;
+}
+
+.user-connection {
+  background: #78D5D7;
+  text-align: center;
+  font-size: 1.2em;
+  padding: 10px;
+  color: #FFF;
+  width: 60%;
+  margin: 20px auto;
 }
 
 #messages { 
@@ -56,5 +68,5 @@ label {
 }
 
 #messages li:nth-child(odd) { 
-  background: #eee; 
+  background: #FFF; 
 }

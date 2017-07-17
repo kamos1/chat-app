@@ -5,11 +5,16 @@ const io = require('socket.io')(http);
 
 app.use(express.static(__dirname + '/public'));
 
+let numUsers = 0;
+
 io.on('connection', (socket) => {
-  io.emit('new user', 'new user connected');
+  numUsers++;
+
+  io.emit('new user', `A user connected there are now ${numUsers} connected`);
 
   socket.on('disconnect', () => {
-    io.emit('user left', 'a user left');
+    numUsers--
+    io.emit('user left', `A user disconnected there are now ${numUsers} connected`);
   })
 
   socket.on('chat message', (msg) => {

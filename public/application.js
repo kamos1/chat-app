@@ -1,34 +1,35 @@
 $(() => {
   const socket = io();
   $('form').submit(() => {
-    const username = $('.username').val();
+    const username = $('.username-input').val();
     const message = $('#m').val();
     
     socket.emit('chat message', `${username}: ${message}`);
     $('#m').val('');
+    $('.username').val('');
     return false;
   });
 
-  $('.message').keydown(() => {
-    const username = $('.username').val();
+  $('.message-input').keydown(() => {
+    const username = $('.username-input').val();
     socket.emit('typing', `${username} is typing`)
   })
 
-  $('.message').keyup(() => {
-    const username = $('.username').val();
+  $('.message-input').keyup(() => {
+    const username = $('.username-input').val();
     socket.emit('not typing', '');
   })
 
   socket.on('chat message', (msg) => {
-    $('#messages').append($('<li>').text(msg));
+    $('#messages').append($('<li class="message">').text(msg));
   });
 
   socket.on('new user', (msg) => {
-    $('#messages').append($('<li>').text(msg));
+    $('.user-connection').text(msg);
   })
 
   socket.on('user left', (msg) => {
-    $('#messages').append($('<li>').text(msg));
+    $('.user-connection').text(msg);
   })
 
   socket.on('typing', (msg) => {

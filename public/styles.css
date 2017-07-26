@@ -5,13 +5,18 @@
   }
 
 body { 
-  font: 13px Helvetica, Arial; 
+  font: 13px Helvetica, Arial;
+  background: #F7F9F9; 
+}
+
+span {
+  color: #68d2fd;
 }
 
 form { 
   background: #F7F9F9;
   padding: 3px;
-  width: 100%;
+  width: 80%;
   text-align: center;
   margin: 0px auto;
 }
@@ -39,6 +44,31 @@ label {
   font-size: 1.5em;
 }
 
+ul {
+  text-align: center;
+  font-size: 30px;
+}
+
+#messages { 
+  list-style-type: none; 
+  margin: 0; 
+  padding: 0; 
+}
+
+#messages li { 
+  padding: 5px 10px; 
+}
+
+#messages li:nth-child(odd) { 
+  background: #F7F9F9; 
+}
+
+.app-name {
+  text-align: center;
+  margin: 20px 0px;
+  color: #7cd5d6;
+}
+
 .username-input {
   margin-bottom: 20px;
 }
@@ -53,20 +83,6 @@ label {
   font-size: 1.2em;
   padding: 10px;
   color: #FFF;
-  width: 60%;
+  width: 48%;
   margin: 20px auto;
-}
-
-#messages { 
-  list-style-type: none; 
-  margin: 0; 
-  padding: 0; 
-}
-
-#messages li { 
-  padding: 5px 10px; 
-}
-
-#messages li:nth-child(odd) { 
-  background: #FFF; 
 }
